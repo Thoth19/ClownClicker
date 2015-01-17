@@ -29,7 +29,7 @@ while(not(done) and pygame.time.get_ticks() < 1000*60): #60 seconds
         pygame.display.quit()
         done = True
     for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.type == pygame.MOUSEBUTTONDOWN or (event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE):
                 mouse_pos = pygame.mouse.get_pos()
                 for clown in all_group:
                     if clown.rect.collidepoint(mouse_pos):
